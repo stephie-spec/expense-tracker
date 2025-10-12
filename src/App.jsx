@@ -25,17 +25,25 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1>Expense Tracker</h1>
+        <div className="header">
+        <h2>Expense Tracker</h2>
         <p>Start taking control of your finances and categorize and analyze your spending record.</p>
-        <input
+        </div>
+        <div className="main">
+        <div>
+        <ExpenseForm onAddExpense={handleAddExpense} />
+      </div>
+        <div>
+          <input
           type="text"
           placeholder="Search expenses"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-bar"
         />
-        <ExpenseForm onAddExpense={handleAddExpense} />
         <ExpenseTable expenses={expenses} onDeleteExpense={handleDeleteExpense} searchTerm={searchTerm} />
+      </div>
+      </div>
       </div>
     </>
   )
