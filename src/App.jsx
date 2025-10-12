@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseTable from './components/ExpenseTable';
 import './App.css'
 
 function App() {
