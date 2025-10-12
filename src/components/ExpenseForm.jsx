@@ -1,4 +1,4 @@
-const { useState } = React;
+import { useState } from 'react'
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [expenseName, setExpenseName] = useState('');

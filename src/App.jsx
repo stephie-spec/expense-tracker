@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import ExpenseForm from './components/ExpenseForm';
-import ExpenseTable from './components/ExpenseTable';
+import ExpenseForm from './components/ExpenseForm.jsx';
+import ExpenseTable from './components/ExpenseTable.jsx';
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('data.json')
+    fetch('src/assets/data.json')
       .then(response => response.json())
       .then(data => setExpenses(data));
   }, []);
