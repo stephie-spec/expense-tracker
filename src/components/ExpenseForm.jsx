@@ -5,15 +5,17 @@ const ExpenseForm = ({ onAddExpense }) => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
+  const [date, setDate] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (expenseName && description && category && amount) {
-      onAddExpense({ name: expenseName, description, category, amount, date: new Date().toLocaleDateString() });
+    if (expenseName && description && category && amount && date) {
+      onAddExpense({ name: expenseName, description, category, amount, date });
       setExpenseName('');
       setDescription('');
       setCategory('');
       setAmount('');
+      setDate('');
     }
   };
 
@@ -43,6 +45,11 @@ const ExpenseForm = ({ onAddExpense }) => {
         placeholder="Enter amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
+      />
+      <input
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
       />
       <button type="submit">Submit</button>
     </form>
