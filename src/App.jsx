@@ -4,14 +4,11 @@ import ExpenseTable from './components/ExpenseTable.jsx';
 import './App.css'
 
 function App() {
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([
+  { "name": "Ugali Matumbo", "description": "Wednesday's Lunch", "category": "Food", "amount": "200", "date": "2025-10-10" },
+  { "name": "KPLC tokens", "description": "Power Tokens", "category": "Utilities", "amount": "500", "date": "2025-10-09" }
+]);
   const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    fetch('src/assets/data.json')
-      .then(response => response.json())
-      .then(data => setExpenses(data));
-  }, []);
 
   const handleAddExpense = (newExpense) => {
     setExpenses([...expenses, newExpense]);
