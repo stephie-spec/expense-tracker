@@ -9,14 +9,14 @@ const ExpenseForm = ({ onAddExpense }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (expenseName && description && category && amount && date) {
+    
       onAddExpense({ name: expenseName, description, category, amount, date });
       setExpenseName('');
       setDescription('');
       setCategory('');
       setAmount('');
       setDate('');
-    }
+    
   };
 
   return (
