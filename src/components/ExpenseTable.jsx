@@ -1,4 +1,4 @@
-const ExpenseTable = ({ expenses, onDeleteExpense, searchTerm }) => {
+function ExpenseTable({ expenses, onDeleteExpense, searchTerm }){
   const filteredExpenses = expenses.filter(expense =>
     expense.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     expense.description.toLowerCase().includes(searchTerm.toLowerCase())
